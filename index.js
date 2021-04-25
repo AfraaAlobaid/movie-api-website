@@ -6,10 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
 		"x-rapidapi-host": "imdb8.p.rapidapi.com"
 	}
 })
-.then(response => {
-	console.log(response);
-})
+.then(response => response.json())
+.then(json => console.log(json))
 .catch(err => {
 	console.error(err);
 });
 })
+
+function getMovies(json){
+    let movies = json.d;
+    let output = "";
+    movies.forEach(movie => {
+        output += `
+            <div class="col-md-3">
+        `
+    });
+}
