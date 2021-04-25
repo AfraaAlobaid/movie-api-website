@@ -13,13 +13,26 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="bg-dark text-white">
+  <body class="bg-dark text-white m-5">
     <div class="container">
-      <header></header>
-      Hello
+        <div class="row">
+            <div class="col-md-12">
+                <form>
+                    <div class="form-group">
+                      <label for="searchInput">Search for a movie</label>
+                      <input type="search" class="form-control" id="searchInput" aria-describedby="hint" placeholder="Enter a keyword">
+                      <small id="hint" class="form-text text-muted">Type a keyword to search for your next favourite movie.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                  </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+        </div>
     </div>
 
-    <footer class="row text-center">
+    <footer class="row text-center text-secondary">
       <div class="col-md-12">
           <p>Made by Afraa Alobaid. 2021</p>
       </div>
