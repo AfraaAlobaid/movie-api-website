@@ -21,11 +21,13 @@ function getMovies(json){
     let output = "";
     movies.forEach(movie => {
         output += `
-            <div class="card col-md-3 bg-secondary">
-                <div class="card-body text-center">
-                    <img src="${movie.i.imageUrl}" alt="Movie Cover Image">
-                    <h5>${movie.l}</h5>
-                    <a onclick="selectMovie('${movie.id}')" class="btn btn-primary" href="#">Details</a>
+            <div class="col-md-3">
+                <div class="card bg-secondary">
+                    <div class="card-body text-center">
+                        <img src="${movie.i.imageUrl}" alt="Movie Cover Image">
+                        <h6 class="m-3">${movie.l}</h6>
+                        <a onclick="selectMovie('${movie.id}')" class="btn btn-primary" href="#">Details</a>
+                    </div>
                 </div>
             </div>
         `
