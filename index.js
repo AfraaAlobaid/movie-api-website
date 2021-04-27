@@ -25,7 +25,7 @@ function getMovies(json){
                 <div class="card bg-secondary">
                     <div class="card-body text-center">
                         <img src="${movie.i.imageUrl}" alt="Movie Cover Image">
-                        <h6 class="m-3">${movie.l}</h6>
+                        <p class="m-2">${movie.l}</p>
                         <a onclick="selectMovie('${movie.id}')" class="btn btn-primary" href="#">Details</a>
                     </div>
                 </div>

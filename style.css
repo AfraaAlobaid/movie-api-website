@@ -6,8 +6,8 @@
 #movies .col-md-3 .card{
     height: 420px;
     margin-bottom: 15px;
+    /* overflow : hidden; */
 }
-
 
 @media(min-width: 960px){
     #movies .col-md-3 .card{
