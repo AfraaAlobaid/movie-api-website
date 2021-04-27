@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 })
 .then(response => response.json())
-.then(json => console.log(json))
+.then(json => {
+    console.log(json);
+    getMovies(json);
+})
 .catch(err => {
 	console.error(err);
 });
@@ -18,7 +21,14 @@ function getMovies(json){
     let output = "";
     movies.forEach(movie => {
         output += `
-            <div class="col-md-3">
+            <div class="card col-md-3 bg-secondary">
+                <div class="card-body text-center">
+                    <img src="${movie.i.imageUrl}" alt="Movie Cover Image">
+                    <h5>${movie.l}</h5>
+                    <a onclick="selectMovie('${movie.id}')" class="btn btn-primary" href="#">Details</a>
+                </div>
+            </div>
         `
     });
+    document.querySelector("#movies").innerHTML = output;
 }
