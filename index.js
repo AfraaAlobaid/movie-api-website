@@ -62,6 +62,21 @@ function selectMovie(id) {
     });
 }
 
-function getMovieDetails(json){
-    
+function getMovieDetails(movie){
+    let output = `
+        <div class="col-md-4">
+            <img src="${movie.poster}" >
+        </div>
+        <div class="col-md-8">
+            <h2>${movie.title}</h2>
+        </div>
+    `;
+
+    document.querySelectorAll("#movies .col-md-3").forEach((movieCard) => {
+        movieCard.style.display = "none";
+    })
+
+    document.querySelector("#searchForm").style.display = "none";
+
+    document.querySelector("#movies").innerHTML += output;
 }
