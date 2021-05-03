@@ -83,9 +83,11 @@ function getMovieDetails(movie){
                 <h4>Plot</h4>
                 ${movie.plot}
             </p>
-            <button onclick="selectMovie('${movie.id}')" class="btn btn-primary">Details</button> 
+            <a href="#" onclick='window.open("https://www.imdb.com/title/${movie.id}/");return false;' class="btn btn-primary">View IMDB</a>
+            <button onclick="goBackToSearch()" class="btn btn-primary">Go Back</button> 
         </div>
     `;
+    console.log(document.querySelectorAll("#movies .col-md-3")[0].style.display);
 
     document.querySelectorAll("#movies .col-md-3").forEach((movieCard) => {
         movieCard.style.display = "none";
@@ -95,4 +97,13 @@ function getMovieDetails(movie){
 
     document.querySelector("#movies").innerHTML += output;
 }
-"https://www.imdb.com/videoplayer/vi2477195545"
+
+function goBackToSearch(){
+    document.querySelector("#movies .col-md-4").remove();
+    document.querySelector("#movies .col-md-8").remove();
+    document.querySelectorAll("#movies .col-md-3").forEach((movieCard) => {
+        movieCard.style.display = "";
+    })
+    document.querySelector("#searchForm").style.display = "";
+
+}
