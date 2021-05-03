@@ -54,7 +54,7 @@ function selectMovie(id) {
   )
     .then((response) => response.json())
     .then((json) => {
-      console.log(json);
+      //console.log(json);
       getMovieDetails(json);
     })
     .catch((err) => {
