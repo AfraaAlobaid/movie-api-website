@@ -63,12 +63,27 @@ function selectMovie(id) {
 }
 
 function getMovieDetails(movie){
+    let cast = "";
+    movie.cast.forEach((member) => {
+        cast += `${member.actor}, `;
+    })
     let output = `
         <div class="col-md-4">
-            <img src="${movie.poster}" >
+            <img src="${movie.poster}">
         </div>
         <div class="col-md-8">
             <h2>${movie.title}</h2>
+            <ul class="list-group bg-secondary">
+                <li class="list-group-item"><strong>Year:</strong> ${movie.year}</li>
+                <li class="list-group-item"><strong>Length</strong> ${movie.length}</li>
+                <li class="list-group-item"><strong>Rating</strong> ${movie.rating}</li>
+                <li class="list-group-item"><strong>Cast</strong> ${cast}</li>
+            </ul>
+            <p>
+                <h4>Plot</h4>
+                ${movie.plot}
+            </p>
+            <button onclick="selectMovie('${movie.id}')" class="btn btn-primary">Details</button> 
         </div>
     `;
 
@@ -80,3 +95,4 @@ function getMovieDetails(movie){
 
     document.querySelector("#movies").innerHTML += output;
 }
+"https://www.imdb.com/videoplayer/vi2477195545"
